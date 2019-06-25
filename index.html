@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Startpage</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="static/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script>
+        <link href="https://fonts.googleapis.com/css?family=Muli|Roboto&display=swap" rel="stylesheet">
+    </head>
+    <body>
+    
+    <div id="landing-header">
+        <h1 id="currentTime"></h1>
+        <h1 id="greeting">Hey there, Aniket</h1>
+        <form method="get" action="https://www.google.com/search" target="_self">
+            <input class="textbox gsearch" type="text" name="q" placeholder="Search" onEnter="send()" autocomplete="off" maxlength="60">
+        </form>
+        <div class=" landing-header bookmarks">
+                <div class="bookmark" id="Work">
+                    <h2>Work</h2>
+                    <ul>
+                      <li><a href="https://www.google.com/">Google</a></li> 
+                      <li><a href="https://mail.google.com/mail/u/0/#inbox">Gmail</a></li> 
+                      <li><a href="https://outlook.live.com/mail/inbox">Outlook</a></li> 
+                      <li><a href="https://iris.nitk.ac.in/hrms">IRIS</a></li> 
+                      <li><a href="https://github.com/">Github</a></li> 
+                    </ul>
+                </div>
+                <div class="bookmark" id="Studies">
+                    <h2>Studies</h2>
+                    <ul>
+                        <li><a href="https://www.udemy.com/home/my-courses/learning/">Udemy</a></li>
+                        <li><a href="https://www.w3schools.com/">W3 Schools</a></li>
+                        <li><a href="https://www.geeksforgeeks.org/">Geeksforgeeks</a></li>
+                        <li><a href="https://www.interviewbit.com/">InterviewBit</a> </li>
+                    </ul>               
+                </div>
+                <div class="bookmark" id="Social">
+                    <h2>Social</h2>
+                    <ul>
+                        <li><a href="https://www.facebook.com/">Facebook</a> </li>              
+                        <li><a href="https://www.linkedin.com/feed/">LinkedIn</a></li>                
+                        <li><a href="https://web.whatsapp.com/">Whatsapp</a> </li>  
+                    </ul>              
+                </div>
+                <div class="bookmark" id="Entertainment">
+                    <h2>Entertainment</h2>
+                    <ul>
+                        <li><a href="https://www.youtube.com/">Youtube</a></li>
+                        <li><a href="https://www.reddit.com/">Reddit</a></li>                  
+                        <li><a href="http://4chan.org/">4chan</a></li>                              
+                        <li><a href="https://www1.9anime.nl/">9anime</a></li>                
+                        <li><a href="https://www.kanyetothe.com/">KanyeToThe</a></li>  
+                    </ul>              
+                </div>
+                <div class="bookmark" id="Misc.">
+                    <h2>Misc.</h2>
+                    <ul>
+                        <li><a href="https://play.google.com/music/listen#/home">Google Play Music</a></li>                
+                        <li><a href="https://www.amazon.in/">Amazon</a></li>                
+                        <li><a href="https://medium.com/">Medium</a></li>                
+                        <li><a href="http://infotech.nitk.ac.in/">NITK IT Dept</a></li>   
+                    </ul>             
+                </div>
+            </div>
+    </div>
+      
+    <ul class="slideshow">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+</body>
+<script>
+
+function send() {
+    document.form.submit();
+}
+
+window.onload = function() {
+  clock();  
+    function clock() {
+    var now = new Date();
+    var TwentyFourHour = now.getHours();
+    var hour = now.getHours();
+    var min = now.getMinutes();
+    var sec = now.getSeconds();
+    var mid = 'pm';
+    if (min < 10) {
+      min = "0" + min;
+    }
+    if (hour > 12) {
+      hour = hour - 12;
+    }    
+    if(hour==0){ 
+      hour=12;
+    }
+    if(TwentyFourHour < 12) {
+       mid = 'am';
+    }
+  
+  document.getElementById('currentTime').innerHTML =     hour+':'+min+' '+mid ;
+    setTimeout(clock, 1000);
+    }
+}
+
+
+</script>
+</html>    

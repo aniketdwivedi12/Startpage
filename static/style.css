@@ -1,0 +1,155 @@
+body {
+    background-color: #000;
+  }
+  
+  #landing-header {
+    z-index: 1;
+    position: relative;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    margin-left:14%;
+    width:70%;
+    margin-top:35px;
+  }
+
+
+  #landing-header h1 {
+    color: #fff;
+    padding-top:20px;
+  }
+  
+  .bookmarks{
+    display:inline-flex;
+    color:white;
+  }
+
+  #currentTime{
+    font-family: 'Muli', sans-serif;
+    font-size:100px;
+    font-weight: bold;
+  }
+  #greeting{
+    font-family: 'Muli', sans-serif;
+    font-size:40px;
+    font-weight:500;
+  }
+  
+  form{
+    padding-top:25px;
+  }
+
+  .gsearch{
+    width:55%;
+    background:none;
+    color:#ffffff;
+    height:50px;
+    font-family: 'Muli', sans-serif;
+    padding:10px;
+    font-size:1.35em;
+    border:2px solid white;
+  }
+
+  .gsearch:focus{
+    border:2px solid rgba(69, 135, 235, 0.6);
+  }
+
+  .bookmark{
+    font-family: 'Muli', sans-serif;
+    padding:15px;
+
+  }
+
+  .bookmark h2{
+    font-weight:500;
+  }
+  .bookmark ul{
+    list-style-type: none;
+    font-family: 'Roboto', sans-serif;
+    font-size:1.2em;
+    padding:20px;
+  }
+
+  .bookmark li{
+    padding:4px;
+  }
+
+  .bookmark a{
+    color:white;
+  }
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:focus, 
+  input:-webkit-autofill:active  {
+      -webkit-box-shadow: 0 0 0 30px white inset !important;
+  }
+
+  .slideshow { 
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .slideshow li { 
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    opacity: 0;
+    z-index: 0;
+    animation: imageAnimation 50s linear infinite; 
+  }
+  
+  .slideshow li:nth-child(1) { 
+    background-image: url("media/1.jpg") 
+  }
+  .slideshow li:nth-child(2) { 
+    background-image: url("media/2.jpg");
+    animation-delay: 10s; 
+  }
+  .slideshow li:nth-child(3) { 
+    background-image: url("media/3.jpg");
+    animation-delay: 20s; 
+  }
+  .slideshow li:nth-child(4) { 
+    background-image: url("media/4.jpg");
+    animation-delay: 30s; 
+  }
+  .slideshow li:nth-child(5) { 
+    background-image: url("media/5.jpg");
+    animation-delay: 40s; 
+  }
+  .slideshow li:nth-child(6) { 
+    background-image: url("media/6.jpg");
+    animation-delay: 50s; 
+  }
+  @keyframes imageAnimation { 
+    0% { 
+      opacity: 0; 
+      animation-timing-function: ease-in;
+    }
+    10% {
+      opacity: 1;
+      animation-timing-function: ease-out;
+    }
+    20% {
+      opacity: 1;
+    }
+    30% {
+      opacity: 0;
+    }
+  }
+  
+  /* Older browser support */
+  .no-cssanimations .slideshow li {
+      opacity: 1;
+  }
